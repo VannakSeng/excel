@@ -1,0 +1,5 @@
+Name,Department,Salary,Status
+Alice,HR,50000.0,Active
+Bob,Sales,,Inactive
+Charlie,IT,60000.0,Active
+Dana,,52000.0,Active
