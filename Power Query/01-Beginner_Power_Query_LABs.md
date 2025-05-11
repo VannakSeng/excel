@@ -11,15 +11,14 @@
 - Load Excel/CSV data
 - Navigate Power Query Editor
 
-### 📝 Tasks
-## 📝 Tasks & Step-by-Step Instructions
+### 📝 Tasks & Step-by-Step Instructions
 
-### ✅ Step 1: Open Power BI Desktop
+#### ✅ Step 1: Open Power BI Desktop
 > _Alternatively, you can do this in Excel using the **Data** tab > **Get & Transform Data**._
 
 ---
 
-### ✅ Step 2: Go to "Get Data"
+#### ✅ Step 2: Go to "Get Data"
 - In **Power BI**:
   - Click `Home` > `Get Data` > `Excel Workbook` (or `Text/CSV` if it's a `.csv` file)
 - In **Excel**:
@@ -27,26 +26,26 @@
 
 ---
 
-### ✅ Step 3: Select the File
+#### ✅ Step 3: Select the File
 - Locate and select `LAB_1_Sales_2024.csv` or `.xlsx`
 - Click **Open**
 
 ---
 
-### ✅ Step 4: Use the Navigator Window
+#### ✅ Step 4: Use the Navigator Window
 - Select the sheet or table containing the data (e.g., `Sheet1`, `SalesData`, etc.)
 - Click **Transform Data** (⚠️ Important: Not "Load")
 
 ---
 
-### ✅ Step 5: Explore Power Query Editor
+#### ✅ Step 5: Explore Power Query Editor
 - **Left Pane**: List of queries (you should see one for your data)
 - **Center Pane**: The actual data preview
 - **Right Pane**: Applied Steps (e.g., Source, Navigation, Changed Type)
 
 ---
 
-### ✅ Step 6: Rename the Query
+#### ✅ Step 6: Rename the Query
 - In the **Query Settings** (right-side panel):
   - Click the query name at the top (default might be `Sheet1` or `Table1`)
   - Change it to `Sales_2024`
@@ -54,10 +53,19 @@
 
 ---
 
-### ✅ Step 7: Close & Load
+#### ✅ Step 7: Close & Load
 - Click `Home` > `Close & Load`
 - Power BI: Loads the data into the model
 - Excel: Loads into a table or Power Pivot model
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Loaded data
+- Explored the Power Query Editor
+- Renamed the query
+- Loaded the cleaned data into your workspace
 
 ---
 
@@ -68,13 +76,53 @@
 ### 🎯 Objective
 - Remove blanks and filter data
 
-### 📝 Tasks
-1. Load employee data into Power Query
-2. Remove rows with blank Department
-3. Filter `Status = Active`
-4. Remove `Status` column
-5. Rename query `Active_Employees`
+### 📝 Tasks & Step-by-Step Instructions
 
+#### ✅ Step 1: Load Employee Data into Power Query
+- Open **Power BI Desktop** (or **Excel**)
+- Go to `Home` > `Get Data` > `Text/CSV`
+- Select the file `LAB_2_Employees.csv`
+- Click **Transform Data**
+
+---
+
+#### ✅ Step 2: Remove Rows with Blank Department
+- In Power Query Editor:
+  - Select the **Department** column
+  - Go to the top menu: `Home` > `Remove Rows` > `Remove Blank Rows`
+
+---
+
+#### ✅ Step 3: Filter Status = Active
+- Click the dropdown arrow in the **Status** column
+- Uncheck all options except **Active**
+- Click **OK**
+
+---
+
+#### ✅ Step 4: Remove the Status Column
+- Right-click the **Status** column header
+- Select **Remove**
+
+---
+
+#### ✅ Step 5: Rename the Query
+- In the **Query Settings** pane (right side):
+  - Click the query name (e.g., `LAB_2_Employees`)
+  - Rename it to `Active_Employees`
+
+---
+
+#### ✅ Step 6: Close & Load
+- Click `Home` > `Close & Load`
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Removed blank rows in Department
+- Filtered only active employees
+- Cleaned up the query and renamed it
 ---
 
 ## 🔬 LAB 3: Splitting Columns
