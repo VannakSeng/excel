@@ -12,11 +12,52 @@
 - Navigate Power Query Editor
 
 ### 📝 Tasks
-1. Go to `Data > Get Data > From Workbook`
-2. Select the workbook and sheet, click `Transform Data`
-3. Explore Power Query Editor panes
-4. Rename the query to `Sales_2024`
-5. Close & Load
+## 📝 Tasks & Step-by-Step Instructions
+
+### ✅ Step 1: Open Power BI Desktop
+> _Alternatively, you can do this in Excel using the **Data** tab > **Get & Transform Data**._
+
+---
+
+### ✅ Step 2: Go to "Get Data"
+- In **Power BI**:
+  - Click `Home` > `Get Data` > `Excel Workbook` (or `Text/CSV` if it's a `.csv` file)
+- In **Excel**:
+  - Click `Data` > `Get Data` > `From File` > `From Workbook` (or `From Text/CSV`)
+
+---
+
+### ✅ Step 3: Select the File
+- Locate and select `LAB_1_Sales_2024.csv` or `.xlsx`
+- Click **Open**
+
+---
+
+### ✅ Step 4: Use the Navigator Window
+- Select the sheet or table containing the data (e.g., `Sheet1`, `SalesData`, etc.)
+- Click **Transform Data** (⚠️ Important: Not "Load")
+
+---
+
+### ✅ Step 5: Explore Power Query Editor
+- **Left Pane**: List of queries (you should see one for your data)
+- **Center Pane**: The actual data preview
+- **Right Pane**: Applied Steps (e.g., Source, Navigation, Changed Type)
+
+---
+
+### ✅ Step 6: Rename the Query
+- In the **Query Settings** (right-side panel):
+  - Click the query name at the top (default might be `Sheet1` or `Table1`)
+  - Change it to `Sales_2024`
+  - Press `Enter`
+
+---
+
+### ✅ Step 7: Close & Load
+- Click `Home` > `Close & Load`
+- Power BI: Loads the data into the model
+- Excel: Loads into a table or Power Pivot model
 
 ---
 
