@@ -132,11 +132,54 @@ You have successfully:
 ### 🎯 Objective
 - Split names and emails by delimiter
 
-### 📝 Tasks
-1. Load data with `Full Name` and `Email`
-2. Split `Full Name` by space
-3. Split `Email` by `@`
-4. Rename resulting columns
+### 📝 Tasks & Step-by-Step Instructions
+
+#### ✅ Step 1: Load the Data into Power Query
+- Open **Power BI Desktop** (or **Excel**)
+- Go to `Home` > `Get Data` > `Text/CSV`
+- Select `LAB_3_Names_Emails.csv`
+- Click **Transform Data**
+
+---
+
+#### ✅ Step 2: Split Full Name by Space
+- Select the **Full Name** column
+- Go to the menu: `Home` > `Split Column` > `By Delimiter`
+- Choose `Space` as the delimiter
+- Choose to split at each occurrence of the delimiter
+- Click **OK**
+
+---
+
+#### ✅ Step 3: Split Email by @
+- Select the **Email** column
+- Go to `Home` > `Split Column` > `By Delimiter`
+- Choose `@` as the delimiter
+- Choose to split at the left-most delimiter
+- Click **OK**
+
+---
+
+#### ✅ Step 4: Rename the Resulting Columns
+- Rename the columns as follows (or according to your structure):
+  - `Full Name.1` → `First Name`
+  - `Full Name.2` → `Last Name`
+  - `Email.1` → `Username`
+  - `Email.2` → `Domain`
+
+---
+
+#### ✅ Step 5: Close & Load
+- Click `Home` > `Close & Load`
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Loaded name and email data
+- Split full names into first and last names
+- Split email addresses into username and domain
+- Renamed the resulting columns
 
 ---
 
@@ -147,11 +190,53 @@ You have successfully:
 ### 🎯 Objective
 - Group by region and sum sales
 
-### 📝 Tasks
-1. Load sales by region
-2. Use `Group By` on `Region`
-3. Summarize `Sales` with Sum
 
+### 📝 Tasks & Step-by-Step Instructions
+
+#### ✅ Step 1: Load the Sales Data into Power Query
+- Open **Power BI Desktop** (or **Excel**)
+- Go to `Home` > `Get Data` > `Text/CSV`
+- Select the file `LAB_4_Region_Sales.csv`
+- Click **Transform Data**
+
+---
+
+#### ✅ Step 2: Group by Region
+- In Power Query Editor:
+  - Select the **Region** column
+  - Go to the menu: `Transform` > `Group By`
+  - In the dialog box:
+    - **Group by**: `Region`
+    - **New column name**: `Total Sales`
+    - **Operation**: `Sum`
+    - **Column**: `Sales`
+  - Click **OK**
+
+---
+
+#### ✅ Step 3: Review the Summarized Data
+- Confirm that you now have a summarized table with:
+  - One row per Region
+  - A column for `Total Sales` containing the sum of sales
+
+---
+
+#### ✅ Step 4: Rename the Query (Optional)
+- In the **Query Settings** pane:
+  - Rename the query to `Region_Sales_Summary`
+
+---
+
+#### ✅ Step 5: Close & Load
+- Click `Home` > `Close & Load`
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Grouped the data by region
+- Summed the sales per region
+- Created a summarized report
 ---
 
 ## 🔬 LAB 5: Merging Queries
@@ -161,11 +246,61 @@ You have successfully:
 ### 🎯 Objective
 - Merge Orders and Products tables
 
-### 📝 Tasks
-1. Load both queries
-2. Merge on `ProductID`
-3. Expand to show `Product Name`
 
+### 📝 Tasks & Step-by-Step Instructions
+
+#### ✅ Step 1: Load Both Data Files into Power Query
+- Open **Power BI Desktop** (or **Excel**)
+- Go to `Home` > `Get Data` > `Text/CSV`
+- Load `LAB_5_Orders.csv` and click **Transform Data**
+- Repeat for `LAB_5_Products.csv`
+
+You should now have two queries in the Power Query Editor:
+- `LAB_5_Orders`
+- `LAB_5_Products`
+
+---
+
+#### ✅ Step 2: Merge Queries on ProductID
+- In the Power Query Editor:
+  - Select the `LAB_5_Orders` query
+  - Go to `Home` > `Merge Queries` > `Merge Queries as New`
+  - In the Merge dialog:
+    - Select `ProductID` from both tables
+    - Use `Inner Join` (default) or another join type as needed
+  - Click **OK**
+
+This creates a new query with merged data.
+
+---
+
+#### ✅ Step 3: Expand to Show Product Name
+- In the new merged query:
+  - Click the expand icon (🔽) next to the `LAB_5_Products` column
+  - Uncheck all columns except `Product Name`
+  - Click **OK**
+
+Now the merged table includes the product name next to each order.
+
+---
+
+#### ✅ Step 4: Rename the Query (Optional)
+- In the **Query Settings** pane:
+  - Rename the query to `Orders_With_ProductName`
+
+---
+
+#### ✅ Step 5: Close & Load
+- Click `Home` > `Close & Load`
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Loaded two datasets
+- Merged them on `ProductID`
+- Expanded to show the product name
+- Created a combined orders view
 ---
 
 ## 🔬 LAB 6: Unpivoting Columns
@@ -175,7 +310,53 @@ You have successfully:
 ### 🎯 Objective
 - Normalize wide data to long format
 
-### 📝 Tasks
-1. Load sales data (Product, Jan, Feb, Mar)
-2. Select months > Unpivot Columns
-3. Rename as `Month` and `Sales`
+
+### 📝 Tasks & Step-by-Step Instructions
+
+#### ✅ Step 1: Load the Sales Data into Power Query
+- Open **Power BI Desktop** (or **Excel**)
+- Go to `Home` > `Get Data` > `Text/CSV`
+- Select the file `LAB_6_Sales_Wide.csv`
+- Click **Transform Data**
+
+---
+
+#### ✅ Step 2: Select the Month Columns
+- In Power Query Editor, you should see columns like:
+  - `Product`, `Jan`, `Feb`, `Mar`
+- Select the columns for the months: `Jan`, `Feb`, `Mar`
+
+---
+
+#### ✅ Step 3: Unpivot the Selected Columns
+- With the month columns selected:
+  - Go to `Transform` > `Unpivot Columns`
+
+This will convert the wide data format into a long format with two new columns:
+- `Attribute` (original column headers)
+- `Value` (original values)
+
+---
+
+#### ✅ Step 4: Rename the New Columns
+- Rename `Attribute` to `Month`
+- Rename `Value` to `Sales`
+
+---
+
+#### ✅ Step 5: Rename the Query (Optional)
+- In the **Query Settings** pane:
+  - Rename the query to `Sales_Long_Format`
+
+---
+
+#### ✅ Step 6: Close & Load
+- Click `Home` > `Close & Load`
+
+---
+
+### 🎉 You’re Done!
+You have successfully:
+- Loaded wide-format sales data
+- Unpivoted the month columns
+- Normalized the dataset into a long format
